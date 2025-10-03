@@ -103,3 +103,33 @@ Several practical challenges arise:
 - Crystal inaccuracies
 
 **PLL Components:**
+Phase Detector → Loop Filter → Voltage-Controlled Oscillator (VCO)
+**Role in BabySoC:**  
+The 8x PLL generates a stable clock for RVMYTH, ensuring reliable timing for instruction execution and data processing.
+
+### 3. DAC - The Digital-to-Analog Bridge
+
+**What is a Digital-to-Analog Converter?**  
+A DAC transforms digital binary data into analog voltage or current signals, allowing digital systems to interact with the analog world.
+
+**VSDBabySoC's 10-bit DAC:**  
+With 10 bits of resolution, the DAC can represent **1024 (2^10) distinct analog levels**, providing reasonable precision for educational demonstrations.
+
+**Role in BabySoC:**  
+Converts the digital output from RVMYTH's register `r17` into an analog signal that could drive external devices like speakers or displays.
+
+---
+
+## 🔄 The SoC Design Journey
+
+### Design Flow Overview
+```mermaid
+graph LR
+    A[Specification] --> B[Architecture]
+    B --> C[Behavioral Modeling]
+    C --> D[RTL Design]
+    D --> E[Functional Verification]
+    E --> F[Synthesis]
+    F --> G[Physical Design]
+    G --> H[Verification]
+    H --> I[Fabrication]
