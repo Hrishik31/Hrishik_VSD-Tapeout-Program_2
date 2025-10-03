@@ -22,7 +22,7 @@
 - [Challenges in Mixed-Signal SoC Design](#challenges-in-mixed-signal-soc-design)
 - [Key Takeaways](#key-takeaways)
 - [Looking Ahead](#looking-ahead)
-- [References](#references)
+
 
 ---
 
