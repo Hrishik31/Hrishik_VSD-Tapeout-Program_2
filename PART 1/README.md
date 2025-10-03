@@ -122,17 +122,33 @@ Converts the digital output from RVMYTH's register `r17` into an analog signal t
 
 ## 🔄 The SoC Design Journey
 
-### Design Flow Overview
+# IC / SoC Design Flow
+
 ```mermaid
-graph LR
-    A[Specification] --> B[Architecture]
-    B --> C[Behavioral Modeling]
-    C --> D[RTL Design]
-    D --> E[Functional Verification]
-    E --> F[Synthesis]
-    F --> G[Physical Design]
-    G --> H[Verification]
-    H --> I[Fabrication]
+flowchart LR
+  Spec[("Specification")]
+  Arch[("Architecture")]
+  BM[("Behavioral Modeling")]
+  RTL[("RTL Design")]
+  FV[("Functional Verification")]
+  Syn[("Synthesis")]
+  PD[("Physical Design")]
+  PV[("Physical Verification")]
+  Fab[("Fabrication")]
+
+  Spec --> Arch
+  Arch --> BM
+  BM --> RTL
+  RTL --> FV
+  FV --> Syn
+  Syn --> PD
+  PD --> PV
+  PV --> Fab
+
+  FV -.-> RTL
+  PV -.-> PD
+  PD -.-> Syn
+  Arch -.-> Spec
     ### Where Functional Modeling Fits
 
 Functional modeling occurs early in the design flow, allowing designers to:
