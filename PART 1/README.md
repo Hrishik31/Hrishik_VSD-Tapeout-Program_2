@@ -10,19 +10,18 @@
 - [Understanding System-on-Chip (SoC)](#understanding-system-on-chip-soc)
   - [What Exactly is an SoC?](#what-exactly-is-an-soc)
   - [Key Components of a Typical SoC](#key-components-of-a-typical-soc)
-- [Why VSDBabySoC?](#why-vsdbabysoс)
-- [The Three Pillars of VSDBabySoC](#the-three-pillars-of-vsdbabysoс)
+- [Why VSDBabySoC?](#why-vsdbabysoc)
+- [The Three Pillars of VSDBabySoC](#the-three-pillars-of-vsdbabysoc)
   - [1. RVMYTH - The Digital Brain](#1-rvmyth---the-digital-brain)
   - [2. PLL - The Clock Maestro](#2-pll---the-clock-maestro)
   - [3. DAC - The Digital-to-Analog Bridge](#3-dac---the-digital-to-analog-bridge)
 - [The SoC Design Journey](#the-soc-design-journey)
-- [How VSDBabySoC Works](#how-vsdbabysoс-works)
+- [How VSDBabySoC Works](#how-vsdbabysoc-works)
 - [Types of SoCs in the Real World](#types-of-socs-in-the-real-world)
 - [The Open-Source Advantage](#the-open-source-advantage)
 - [Challenges in Mixed-Signal SoC Design](#challenges-in-mixed-signal-soc-design)
 - [Key Takeaways](#key-takeaways)
 - [Looking Ahead](#looking-ahead)
-
 
 ---
 
@@ -30,9 +29,9 @@
 
 This repository documents my journey through understanding fundamental concepts of **System-on-Chip (SoC)** design by exploring **VSDBabySoC** - a compact, educational RISC-V-based SoC that integrates three key components:
 
-- **RVMYTH** - A RISC-V processor core
-- **PLL** - Phase-Locked Loop for clock generation
-- **DAC** - Digital-to-Analog Converter
+- **RVMYTH** - A RISC-V processor core  
+- **PLL** - Phase-Locked Loop for clock generation  
+- **DAC** - Digital-to-Analog Converter  
 
 ---
 
@@ -44,21 +43,21 @@ Think of an SoC as a **complete computer system squeezed onto a single chip**. I
 
 #### Why does this matter?
 
-- **Space efficiency**: Your smartphone wouldn't fit in your pocket if it needed a full-sized computer motherboard
-- **Power savings**: When components are closer together, signals travel shorter distances, consuming less energy
-- **Performance**: Shorter distances also mean faster communication between components
-- **Cost**: Manufacturing one integrated chip is often cheaper than assembling multiple separate components
+- **Space efficiency**  
+- **Power savings**  
+- **Performance**  
+- **Cost efficiency**  
 
 ### Key Components of a Typical SoC
 
 | Component | Function |
 |-----------|----------|
-| **CPU** | The decision-maker that executes instructions and coordinates operations |
-| **Memory Subsystem** | RAM for temporary storage, ROM/Flash for permanent storage |
-| **I/O Interfaces** | Bridges connecting the SoC to external devices |
-| **Specialized Processors** | GPU for graphics, DSP for signal processing |
-| **Power Management** | Controls voltage levels and power distribution |
-| **Interconnect Fabric** | The "highway system" allowing different components to communicate |
+| **CPU** | Executes instructions and coordinates operations |
+| **Memory Subsystem** | RAM, ROM, Flash |
+| **I/O Interfaces** | Bridges to external devices |
+| **Specialized Processors** | GPU, DSP |
+| **Power Management** | Voltage and power distribution |
+| **Interconnect Fabric** | Highways for communication |
 
 ---
 
@@ -66,63 +65,33 @@ Think of an SoC as a **complete computer system squeezed onto a single chip**. I
 
 VSDBabySoC serves as an ideal learning platform because it:
 
-1. **Simplifies Complexity** - Focuses on three core components that teach fundamental principles
-2. **Demonstrates Mixed-Signal Design** - Integrates both digital (processor) and analog (PLL, DAC) components
-3. **Open-Source Foundation** - Built entirely on open-source tools and IP cores
-4. **Complete Design Flow** - Takes learners through the entire journey from behavioral modeling to physical layout (GDSII)
-5. **Real-World Application** - Shows how digital signals can drive analog outputs
+1. **Simplifies Complexity**  
+2. **Demonstrates Mixed-Signal Design**  
+3. **Open-Source Foundation**  
+4. **Complete Design Flow**  
+5. **Real-World Application**  
 
 ---
 
 ## 🔧 The Three Pillars of VSDBabySoC
 
 ### 1. RVMYTH - The Digital Brain
-
-**What is it?**  
-RVMYTH is a RISC-V-based processor core designed specifically for educational purposes, created using Transaction-Level Verilog (TLV).
-
-**Why RISC-V?**
-- Open standard instruction set architecture
-- No licensing fees or proprietary restrictions
-- Growing ecosystem with industry adoption
-- Excellent for learning computer architecture fundamentals
-
-**Role in BabySoC:**  
-RVMYTH executes instructions stored in its instruction memory (imem) and processes data, ultimately filling register `r17` with values that get passed to the DAC for analog conversion.
+- RISC-V processor core for education
+- Built in Transaction-Level Verilog (TLV)
 
 ### 2. PLL - The Clock Maestro
-
-**What is a Phase-Locked Loop?**  
-A PLL is a control system that generates a stable, synchronized clock signal. It takes a reference frequency and produces an output that's locked in both frequency and phase.
-
-**Why can't we just use an external clock?**  
-Several practical challenges arise:
-- Clock distribution delays
-- Jitter variations
-- Multiple frequency requirements
-- Crystal inaccuracies
-
-**PLL Components:**
-Phase Detector → Loop Filter → Voltage-Controlled Oscillator (VCO)
-**Role in BabySoC:**  
-The 8x PLL generates a stable clock for RVMYTH, ensuring reliable timing for instruction execution and data processing.
+- Provides stable synchronized clock
+- 8x PLL used for RVMYTH
 
 ### 3. DAC - The Digital-to-Analog Bridge
-
-**What is a Digital-to-Analog Converter?**  
-A DAC transforms digital binary data into analog voltage or current signals, allowing digital systems to interact with the analog world.
-
-**VSDBabySoC's 10-bit DAC:**  
-With 10 bits of resolution, the DAC can represent **1024 (2^10) distinct analog levels**, providing reasonable precision for educational demonstrations.
-
-**Role in BabySoC:**  
-Converts the digital output from RVMYTH's register `r17` into an analog signal that could drive external devices like speakers or displays.
+- 10-bit DAC converts digital values to analog
+- Bridges digital core with analog world  
 
 ---
 
 ## 🔄 The SoC Design Journey
 
-# IC / SoC Design Flow
+### IC / SoC Design Flow
 
 ```mermaid
 flowchart LR
@@ -151,7 +120,7 @@ flowchart LR
   PD -.-> Syn
   Arch -.-> Spec
 
-### Where Functional Modeling Fits
+**Where Functional Modeling Fits?**
 
 Functional modeling occurs early in the design flow, allowing designers to:
 
