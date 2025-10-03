@@ -2,7 +2,8 @@
 
 [![RISC-V](https://img.shields.io/badge/RISC--V-Digital%20Design-blue?style=for-the-badge&logo=riscv)](https://riscv.org/)
 [![Workshop](https://img.shields.io/badge/RTL-Workshop-orange?style=for-the-badge)](https://vsdiat.vlsisystemdesign.com/)
-[![Week 2](https://img.shields.io/badge/Week%200-Part%201-green?style=for-the-badge)]()
+[![Week 2](https://img.shields.io/badge/Week%202-Part%201-green?style=for-the-badge)]()
+
 
 ## 📋 Table of Contents
 
