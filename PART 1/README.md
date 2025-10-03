@@ -820,21 +820,7 @@ A **Phase-Locked Loop (PLL)** is a control system that generates an output signa
 
 #### Block Diagram and Components
 
-```
-           ┌────────────────────────────────────┐
-           │       Phase-Locked Loop (PLL)     │
-           │                                    │
-REF_CLK───>│  ┌──────────┐  ┌────────┐  ┌────┐│
-           │  │  Phase   │  │  Loop  │  │VCO ││──> CLK_OUT
-           │  │ Detector │─>│ Filter │─>│    ││    (8x)
-           │  └────┬─────┘  └────────┘  └──┬─┘│
-           │       │                        │  │
-           │       │      ┌─────────────────┘  │
-           │       └──────│  Feedback          │
-           │              │  Divider (/8)      │
-           │              └────────────────────│
-           └────────────────────────────────────┘
-```
+![333810875-fd7730e9-a867-4ce3-bfc6-9453e3d8ad14](https://github.com/user-attachments/assets/217d602f-003d-4606-9bca-855a4832764c)<br>
 
 #### Core Components Explained
 
@@ -1022,21 +1008,7 @@ VSDBabySoC could use either of two common DAC types:
 
 **1. Weighted Resistor DAC**
 
-```
-        Vref
-         │
-    ┌────┴────┬────┬────┬─────┬─────────┐
-    │    │    │    │    │     │         │
-   2R   4R   8R   16R  32R ... 1024R   
-    │    │    │    │    │     │         │
-    S9   S8   S7   S6   S5 ... S0      
-    │    │    │    │    │     │         │
-    └────┴────┴────┴────┴─────┴────────┬───> Vout
-                                         │
-                                        ─┴─ Summing
-                                        ─┬─ Junction
-                                         │
-```
+  ![binary_weighted_resistors](https://github.com/user-attachments/assets/344e4ffd-7509-41e7-ac42-21a553b3db11)
 
 **How It Works:**
 - Each bit controls a switch
@@ -1057,21 +1029,7 @@ VSDBabySoC could use either of two common DAC types:
 
 **2. R-2R Ladder DAC**
 
-```
-    Vref
-     │
-    ┌┴┐ 2R
-    │ │
-    └┬┘
-     │
-   ┌─┴──┬───2R───┬───2R───┬───2R───┬─── ... ──┬───2R───┐
-   │    │        │        │        │          │        │
-   R    R        R        R        R          R        R
-   │    │        │        │        │          │        │
-   S9   S8       S7       S6       S5   ...   S1       S0
-   │    │        │        │        │          │        │
-  GND  GND      GND      GND      GND        GND   ───>Vout
-```
+ ![comb99 gif copy](https://github.com/user-attachments/assets/5c15f424-1a94-4424-b019-a76c0ca0db43)
 
 **How It Works:**
 - Uses only two resistor values: R and 2R
