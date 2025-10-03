@@ -614,24 +614,7 @@ This SoC is specifically designed as a learning platform because it:
 ### Architecture Overview
 
 VSDBabySoC integrates three critical IP cores:
-
-```
-┌─────────────────────────────────────────────────────┐
-│                   VSDBabySoC                        │
-│                                                     │
-│  ┌──────────┐      ┌──────────┐      ┌──────────┐ │
-│  │          │ CLK  │          │ Data │          │ │
-│  │   PLL    │─────>│  RVMYTH  │─────>│   DAC    │ │
-│  │  (8x)    │      │  (CPU)   │      │ (10-bit) │ │
-│  │          │      │          │      │          │ │
-│  └──────────┘      └──────────┘      └──────────┘ │
-│       ▲                                     │      │
-│       │                                     ▼      │
-│  REF_CLK                               ANALOG_OUT  │
-│                                                     │
-└─────────────────────────────────────────────────────┘
-```
-
+ ![333622249-04238eab-4d48-4d57-9061-f8b660a83d6e](https://github.com/user-attachments/assets/38253bb7-b658-496d-a043-15402219e089)
 ### Operational Flow
 
 #### **Stage 1: Initialization and Clock Generation**
