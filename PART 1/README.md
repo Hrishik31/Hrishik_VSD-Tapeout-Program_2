@@ -1,8 +1,9 @@
 # VSDBabySoC: A Comprehensive Guide to RISC-V Based SoC Design
 
+
 [![RISC-V](https://img.shields.io/badge/RISC--V-Digital%20Design-blue?style=for-the-badge&logo=riscv)](https://riscv.org/)
-[![Open Source](https://img.shields.io/badge/Open%20Source-Hardware-green?style=for-the-badge)](https://github.com)
-[![Sky130](https://img.shields.io/badge/Sky130-PDK-orange?style=for-the-badge)](https://skywater-pdk.readthedocs.io/)
+[![Workshop](https://img.shields.io/badge/RTL-Workshop-orange?style=for-the-badge)](https://vsdiat.vlsisystemdesign.com/)
+[![Week 2](https://img.shields.io/badge/Week%202-Part%201-green?style=for-the-badge)]()
 
 ---
 
