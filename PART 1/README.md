@@ -31,6 +31,7 @@
   - [Functional Modeling Stage](#functional-modeling-stage)
 - [How VSDBabySoC Works](#how-vsdbabysoc-works)
 - [Open-Source Ecosystem](#open-source-ecosystem)
+  - [IP Cores](#ip-cores)
   - [Design Tools](#design-tools)
   - [Why Open Source?](#why-open-source)
 - [Mixed-Signal Design Challenges](#mixed-signal-design-challenges)
