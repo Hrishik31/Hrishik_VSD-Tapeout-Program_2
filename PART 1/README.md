@@ -31,12 +31,10 @@
   - [Functional Modeling Stage](#functional-modeling-stage)
 - [How VSDBabySoC Works](#how-vsdbabysoc-works)
 - [Open-Source Ecosystem](#open-source-ecosystem)
-  - [IP Cores](#ip-cores)
   - [Design Tools](#design-tools)
   - [Why Open Source?](#why-open-source)
 - [Mixed-Signal Design Challenges](#mixed-signal-design-challenges)
 - [Learning Outcomes](#learning-outcomes)
-- [Future Roadmap](#future-roadmap)
 - [Conclusion](#conclusion)
 
 ---
@@ -1679,40 +1677,6 @@ Cycle N:
   7. Analog output changes to 1.65V
 ```
 
-### Signal Timeline
-
-```
-Time →
-
-REF_CLK:   ___/‾‾‾\___/‾‾‾\___/‾‾‾\___
-              10 MHz reference
-
-CLK (PLL): _/\\_/\\_/\\_/\\_/\\_/\\_/\\_/\\
-              80 MHz system clock
-
-RV_TO_DAC: [000]-[001]-[002]-[003]-...
-              Incrementing values
-
-DAC_OUT:   0V → 0.003V → 0.006V → ...
-              Ramp waveform
-```
-
-### Output Characteristics
-
-**Ramp Waveform Example:**
-```
-Voltage
-  3.3V ┤              ╱
-       │            ╱
-  2.5V ┤          ╱
-       │        ╱
-  1.6V ┤      ╱
-       │    ╱
-  0.8V ┤  ╱
-       │╱
-  0.0V └──────────────> Time
-       0  256  512  768  1023 (steps)
-```
 
 **Practical Applications:**
 
@@ -1921,32 +1885,6 @@ This doesn't capture:
 - Different path lengths cause skew
 - Impacts setup and hold times
 
-**Setup Time Violation:**
-```
-CLK:     ___/‾‾‾\___
-DATA:    ─────<VALID>─────
-                ↑
-         Must arrive before CLK edge
-         Setup time requirement
-```
-
-**Hold Time Violation:**
-```
-CLK:     ___/‾‾‾\___
-DATA:    ─────<VALID><NEW>
-              ↑     ↑
-         Must hold after CLK edge
-         Hold time requirement
-```
-
-**Clock Skew:**
-```
-CLK at FF1:  ___/‾‾‾\___
-CLK at FF2:  ____/‾‾‾\___  (delayed)
-                 ↑
-           Skew = delay difference
-```
-
 **Solutions:**
 - Clock tree synthesis
 - Buffer insertion
@@ -1969,44 +1907,6 @@ CLK at FF2:  ____/‾‾‾\___  (delayed)
 - Noise isolation
 - ESD protection
 
-**Creating Library Files:**
-
-**LIB File (Liberty format):**
-```
-cell (DAC_10bit) {
-    area : 1000;
-    pin(CLK) {
-        direction : input;
-        capacitance : 0.01;
-    }
-    pin(D[9:0]) {
-        direction : input;
-        capacitance : 0.005;
-    }
-    pin(VOUT) {
-        direction : output;
-        function : "(analog_function)";
-        timing() { ... }
-    }
-}
-```
-
-**LEF File (Layout Exchange Format):**
-```
-MACRO DAC_10bit
-    CLASS BLOCK ;
-    ORIGIN 0 0 ;
-    SIZE 100 BY 100 ;
-    PIN VDD
-        DIRECTION INOUT ;
-        PORT
-            LAYER metal1 ;
-            RECT 0 0 10 10 ;
-        END
-    END VDD
-    ...
-END DAC_10bit
-```
 
 **Challenges:**
 - Characterizing analog timing
@@ -2227,55 +2127,7 @@ Skills gained are directly applicable to:
 - [ ] Tape-out preparation
 - [ ] Manufacturing file creation
 
-### Advanced Extensions
 
-#### **Enhanced Features:**
-1. **Add More IP Blocks**
-   - UART communication
-   - SPI interface
-   - I2C controller
-   - Timer modules
-
-2. **Improve Processor**
-   - Add more RISC-V extensions
-   - Implement caching
-   - Enhance pipeline
-   - Add debugging support
-
-3. **Better DAC**
-   - Higher resolution (12-bit, 16-bit)
-   - Differential output
-   - Better linearity
-   - Current output mode
-
-4. **System Enhancements**
-   - Multiple clock domains
-   - Power management
-   - DMA controller
-   - Interrupt controller
-
-#### **Application Projects:**
-1. **Audio System**
-   - Generate music waveforms
-   - Implement simple synthesizer
-   - Audio effects processing
-
-2. **Display Controller**
-   - VGA signal generation
-   - Simple graphics
-   - Pattern generation
-
-3. **Sensor Interface**
-   - Read analog sensors
-   - Process sensor data
-   - Control outputs based on inputs
-
-4. **Communication System**
-   - Implement protocols
-   - Data transmission
-   - Error checking
-
----
 
 ## 🎯 Conclusion
 
