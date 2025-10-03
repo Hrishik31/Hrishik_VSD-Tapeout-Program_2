@@ -64,23 +64,11 @@ This project addresses the challenge of designing a **compact, open-source Syste
 - Understand cutting-edge technology
 - Prepare for semiconductor careers
 
-**For Educators:**
-- Teach with real tools and flows
-- Provide hands-on experiences
-- Connect theory to practice
-- Inspire the next generation
-
 **For the Industry:**
 - Develop skilled workforce
 - Foster innovation
 - Reduce barriers to entry
 - Accelerate technology advancement
-
-**For Society:**
-- Democratize technology education
-- Enable global participation
-- Drive economic opportunity
-- Advance technological progress
 
 ### Key Takeaways
 
