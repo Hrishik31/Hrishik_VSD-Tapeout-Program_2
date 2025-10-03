@@ -126,15 +126,15 @@ Converts the digital output from RVMYTH's register `r17` into an analog signal t
 
 ```mermaid
 flowchart LR
-  Spec[("Specification")]
-  Arch[("Architecture")]
-  BM[("Behavioral Modeling")]
-  RTL[("RTL Design")]
-  FV[("Functional Verification")]
-  Syn[("Synthesis")]
-  PD[("Physical Design")]
-  PV[("Physical Verification")]
-  Fab[("Fabrication")]
+  Spec["Specification"]
+  Arch["Architecture"]
+  BM["Behavioral Modeling"]
+  RTL["RTL Design"]
+  FV["Functional Verification"]
+  Syn["Synthesis"]
+  PD["Physical Design"]
+  PV["Physical Verification"]
+  Fab["Fabrication"]
 
   Spec --> Arch
   Arch --> BM
@@ -145,11 +145,13 @@ flowchart LR
   PD --> PV
   PV --> Fab
 
+  %% Feedback loops
   FV -.-> RTL
   PV -.-> PD
   PD -.-> Syn
   Arch -.-> Spec
-    ### Where Functional Modeling Fits
+
+### Where Functional Modeling Fits
 
 Functional modeling occurs early in the design flow, allowing designers to:
 
