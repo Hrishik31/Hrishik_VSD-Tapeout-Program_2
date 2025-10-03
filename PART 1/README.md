@@ -174,6 +174,25 @@ Functional modeling occurs early in the design flow, allowing designers to:
 | **Application-Specific** | Optimized tasks | Graphics cards, AI accelerators | PLL and DAC as specialized IP |
 
 ---
+## **The role of functional modelling before RTL and physical design stages**
+
+- Functional modelling is the stage where a system’s behavior is described without worrying about its actual hardware implementation. It’s usually done in high-level languages like C, SystemC, or Python. Its role is crucial in the SoC design flow:
+
+- Behavior Verification: Functional models allow designers to verify system functionality early, ensuring that the design meets specifications before writing RTL (Register Transfer Level) code.
+
+- Design Exploration: Multiple architectures can be tested quickly, e.g., trying different CPU or memory configurations, without committing to complex RTL.
+
+- Time and Cost Savings: Catching functional errors at the modelling stage is much cheaper than debugging at RTL or physical design stages.
+
+- Guidance for RTL Design: Once the functional behavior is verified, the model serves as a reference for RTL coding, ensuring that the hardware accurately implements the intended functionality.
+
+- Simulation Speed: High-level models simulate much faster than RTL, allowing system-level verification of large designs in reasonable time.
+
+- Supports Early Software Development: Software teams can use the functional model to develop drivers or applications even before the hardware is ready.
+
+In short: Functional modelling is like a “blueprint and prototype” for the SoC—it validates the design conceptually before investing effort into detailed RTL coding and physical layout.
+
+---
 
 ## 💎 The Open-Source Advantage
 
