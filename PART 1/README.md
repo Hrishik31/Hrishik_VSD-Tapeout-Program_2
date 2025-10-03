@@ -444,6 +444,9 @@ SoCs power virtually every modern electronic device:
 - 5G integration
 - Popular in mid-range devices
 
+<img width="1024" height="683" alt="image" src="https://github.com/user-attachments/assets/04c99c1a-469e-45c0-9be9-65a613985e30" />
+
+
 ### Design Challenges
 
 Creating an SoC is a complex undertaking with significant hurdles:
