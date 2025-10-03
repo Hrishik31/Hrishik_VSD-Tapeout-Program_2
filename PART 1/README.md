@@ -120,7 +120,7 @@ flowchart LR
   PV -.-> PD
   PD -.-> Syn
   Arch -.-> Spec
-
+```
 **Where Functional Modeling Fits?**
 
 Functional modeling occurs early in the design flow, allowing designers to:
