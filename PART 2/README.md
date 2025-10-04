@@ -170,7 +170,7 @@ VCD info: dumpfile baby_soc.vcd opened for output.
 baby_soc_tb.v:38: $finish called at 200000 (1ps)
 ```
 
-![Simulation Terminal Output]<img width="1207" height="101" alt="vcd simulation log" src="https://github.com/user-attachments/assets/b3047833-5366-4063-9f5a-b1441df290c4" />
+<img width="1207" height="101" alt="vcd simulation log" src="https://github.com/user-attachments/assets/b3047833-5366-4063-9f5a-b1441df290c4" />
 
 
 **Image 1 Explanation**: This terminal screenshot shows the successful execution of the simulation. The output confirms that:
@@ -250,7 +250,7 @@ In GTKWave:
 
 ### Waveform 2: Complete System Operation
 
-![Complete System Waveform]<img width="1286" height="798" alt="gtkwave_presynth" src="https://github.com/user-attachments/assets/0d6c2439-e073-4a7f-b769-7d72f1090955" />
+[Complete System Waveform]<img width="1286" height="798" alt="gtkwave_presynth" src="https://github.com/user-attachments/assets/0d6c2439-e073-4a7f-b769-7d72f1090955" />
 
 
 **Image 3 Explanation**: This comprehensive waveform shows the complete VSDBabySoC operation over a longer time period (0-85µs):
@@ -306,7 +306,7 @@ This matches the documented behavior in the program description.
 
 ### Waveform 3: GTKWave Launch Confirmation
 
-![GTKWave Launch](placeholder_image4_gtkwave_launch.png)
+[GTKWave Launch](placeholder_image4_gtkwave_launch.png)
 
 **Image 4 Explanation**: Terminal output showing successful GTKWave launch:
 
