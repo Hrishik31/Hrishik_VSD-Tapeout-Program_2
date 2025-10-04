@@ -250,7 +250,7 @@ In GTKWave:
 
 ### Waveform 2: Complete System Operation
 
-[Complete System Waveform]<img width="1286" height="798" alt="gtkwave_presynth" src="https://github.com/user-attachments/assets/0d6c2439-e073-4a7f-b769-7d72f1090955" />
+[<img width="1286" height="798" alt="gtkwave_presynth" src="https://github.com/user-attachments/assets/0d6c2439-e073-4a7f-b769-7d72f1090955" />
 
 
 **Image 3 Explanation**: This comprehensive waveform shows the complete VSDBabySoC operation over a longer time period (0-85µs):
@@ -306,7 +306,8 @@ This matches the documented behavior in the program description.
 
 ### Waveform 3: GTKWave Launch Confirmation
 
-[GTKWave Launch](placeholder_image4_gtkwave_launch.png)
+<img width="1122" height="188" alt="simulation_log_gtkwave_presynth" src="https://github.com/user-attachments/assets/36aac298-d67e-4e90-9f03-b7606b136616" />
+
 
 **Image 4 Explanation**: Terminal output showing successful GTKWave launch:
 
