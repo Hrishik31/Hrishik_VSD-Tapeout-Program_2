@@ -226,7 +226,7 @@ In GTKWave:
 
 ### Waveform 1: Basic Signal Overview
 
-![Basic Waveform]<img width="1228" height="662" alt="gtkwave_babysoc" src="https://github.com/user-attachments/assets/0e559707-fbd6-49bd-8895-ce6e7e8eacbb" />
+<img width="1228" height="662" alt="gtkwave_babysoc" src="https://github.com/user-attachments/assets/0e559707-fbd6-49bd-8895-ce6e7e8eacbb" />
 
 
 **Image 2 Explanation**: This waveform shows the fundamental operation of VSDBabySoC during early simulation time (0-200ns):
